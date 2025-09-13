@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Groundwater Monitoring Design System - Water-inspired theme */
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 210 20% 98%;
+    --foreground: 210 15% 20%;
+
+    /* Card and surface colors */
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 20%;
+
+    /* Primary - Deep water blue */
+    --primary: 210 75% 25%;
+    --primary-foreground: 210 20% 98%;
+    --primary-light: 210 65% 45%;
+    --primary-glow: 210 85% 65%;
+
+    /* Secondary - Aqua teal */
+    --secondary: 180 45% 88%;
+    --secondary-foreground: 180 65% 25%;
+
+    /* Muted tones */
+    --muted: 210 25% 95%;
+    --muted-foreground: 210 15% 45%;
+
+    /* Accent - Water teal */
+    --accent: 180 55% 50%;
+    --accent-foreground: 210 20% 98%;
+
+    /* Status colors for water levels */
+    --water-safe: 142 76% 36%;
+    --water-caution: 45 93% 47%;
+    --water-critical: 0 84% 60%;
+    --water-unknown: 210 15% 65%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    /* Border and inputs */
+    --border: 210 25% 90%;
+    --input: 210 25% 95%;
+    --ring: 210 75% 55%;
+
+    /* Gradients */
+    --gradient-water: linear-gradient(135deg, hsl(210, 75%, 45%), hsl(180, 65%, 55%));
+    --gradient-flow: linear-gradient(90deg, hsl(210, 85%, 65%), hsl(180, 75%, 65%));
+    --gradient-depth: linear-gradient(180deg, hsl(180, 55%, 85%), hsl(210, 65%, 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(210, 75%, 25%), hsl(180, 65%, 35%));
+
+    /* Shadows */
+    --shadow-water: 0 10px 30px -10px hsl(210, 75%, 45% / 0.3);
+    --shadow-glow: 0 0 40px hsl(180, 85%, 65% / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(210, 25%, 20% / 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-flow: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Base colors */
+    --background: 210 15% 8%;
+    --foreground: 210 20% 95%;
+
+    /* Card and surface colors */
+    --card: 210 15% 10%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 210 15% 10%;
+    --popover-foreground: 210 20% 95%;
+
+    /* Primary - Lighter water blue for dark mode */
+    --primary: 210 85% 75%;
+    --primary-foreground: 210 15% 15%;
+    --primary-light: 210 75% 65%;
+    --primary-glow: 210 95% 85%;
+
+    /* Secondary - Darker aqua teal */
+    --secondary: 180 25% 25%;
+    --secondary-foreground: 180 85% 85%;
+
+    /* Muted tones */
+    --muted: 210 20% 15%;
+    --muted-foreground: 210 15% 65%;
+
+    /* Accent - Brighter water teal */
+    --accent: 180 65% 60%;
+    --accent-foreground: 210 15% 15%;
+
+    /* Status colors remain the same */
+    --water-safe: 142 76% 36%;
+    --water-caution: 45 93% 47%;
+    --water-critical: 0 84% 60%;
+    --water-unknown: 210 15% 45%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 95%;
+
+    /* Border and inputs */
+    --border: 210 25% 18%;
+    --input: 210 25% 18%;
+    --ring: 210 85% 65%;
+
+    /* Updated gradients for dark mode */
+    --gradient-water: linear-gradient(135deg, hsl(210, 65%, 45%), hsl(180, 55%, 45%));
+    --gradient-flow: linear-gradient(90deg, hsl(210, 75%, 55%), hsl(180, 65%, 55%));
+    --gradient-depth: linear-gradient(180deg, hsl(180, 45%, 25%), hsl(210, 45%, 15%));
+    --gradient-hero: linear-gradient(135deg, hsl(210, 65%, 35%), hsl(180, 55%, 25%));
+
+    /* Updated shadows for dark mode */
+    --shadow-water: 0 10px 30px -10px hsl(210, 85%, 65% / 0.4);
+    --shadow-glow: 0 0 40px hsl(180, 95%, 75% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(210, 25%, 5% / 0.3);
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
