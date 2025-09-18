@@ -12,6 +12,8 @@ import { GroundwaterHealthIndex } from "@/components/GroundwaterHealthIndex"
 import { AdvancedDashboardGrid } from "@/components/advanced/AdvancedWidgets"
 import { IndiaMapSVG } from "@/components/IndiaMapSVG"
 import { useGroundwaterData, useStateGroundwaterData } from "@/components/GroundwaterAPI"
+import { GroundwaterWidget } from "@/components/groundwater"
+import ClickableIndiaMap from "@/components/ClickableIndiaMap"
 import { MapPin, Activity, TrendingUp, AlertTriangle } from "lucide-react"
 
 export default function Dashboard() {
@@ -123,7 +125,7 @@ export default function Dashboard() {
 
       <div className="grid grid-cols-1 xl:grid-cols-4 gap-6">
         <div className="xl:col-span-3">
-          <IndiaMapSVG />
+          <ClickableIndiaMap />
         </div>
 
         <div className="space-y-4">
@@ -253,6 +255,9 @@ export default function Dashboard() {
         </div>
         <div className="space-y-6">
           <GroundwaterHealthIndex score={64} region={`${state} / ${district}`} trend="up" />
+          <GroundwaterWidget 
+            onViewFull={() => window.location.href = '/groundwater'}
+          />
           <Card>
             <CardHeader>
               <CardTitle>Recent Alerts</CardTitle>

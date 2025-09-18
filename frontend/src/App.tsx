@@ -9,6 +9,9 @@ import Analytics from "./pages/Analytics";
 import Community from "./pages/Community";
 import Knowledge from "./pages/Knowledge";
 import Notifications from "./pages/Notifications";
+import GroundwaterMonitoring from "./pages/GroundwaterMonitoring";
+import Predict from "./pages/Predict";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -34,6 +37,9 @@ const App = () => (
               <Route path="/community" element={<Community />} />
               <Route path="/knowledge" element={<Knowledge />} />
               <Route path="/notifications" element={<Notifications />} />
+              <Route path="/groundwater" element={<GroundwaterMonitoring />} />
+              <Route path="/predict" element={<Predict />} />
+              <Route path="/about" element={<About />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route element={<ProtectedRoute />}>

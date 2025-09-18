@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Droplets, Menu, Bell, User, Search, Home, BarChart3, Map, AlertTriangle, BookOpen, LogIn, LogOut } from "lucide-react";
+import { Droplets, Menu, Bell, User, Search, Home, BarChart3, Map, AlertTriangle, BookOpen, LogIn, LogOut, Activity, TrendingUp, BadgeAlert } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import {
@@ -27,10 +27,9 @@ export const NavigationHeader = ({ activeSection = "dashboard", onSectionChange 
   const navigationItems = [
     { id: "home", label: "Home", icon: Home, path: "/" },
     { id: "dashboard", label: "Dashboard", icon: Home, path: "/dashboard" },
-    { id: "analytics", label: "Analytics", icon: BarChart3, path: "/analytics" },
-    { id: "community", label: "Community", icon: AlertTriangle, path: "/community" },
-    { id: "knowledge", label: "Knowledge Hub", icon: BookOpen, path: "/knowledge" },
-    { id: "notifications", label: "Notifications", icon: Bell, path: "/notifications" },
+    { id: "predict", label: "Predict", icon: TrendingUp, path: "/predict" },
+    { id: "about", label: "About", icon: BookOpen, path: "/about" },
+    { id: "notifications", label: "Notifications", icon: BadgeAlert, path: "/notifications" },
   ];
 
   return (
@@ -65,7 +64,7 @@ export const NavigationHeader = ({ activeSection = "dashboard", onSectionChange 
               return (
                 <Button
                   key={item.id}
-                  variant={activeSection === item.id ? "default" : "ghost"}
+                  variant={activeSection && item.path && activeSection.startsWith(item.path) ? "default" : "ghost"}
                   size="sm"
                   onClick={() => item.path ? navigate(item.path) : onSectionChange?.(item.id)}
                   className="flex items-center gap-2"
@@ -85,7 +84,7 @@ export const NavigationHeader = ({ activeSection = "dashboard", onSectionChange 
           {/* Right Side Actions */}
           <div className="flex items-center gap-2">
             {/* Search */}
-            <div className="relative hidden md:block">
+            {/* <div className="relative hidden md:block">
               {isSearchOpen ? (
                 <Input
                   placeholder="Search region, district..."
@@ -104,15 +103,15 @@ export const NavigationHeader = ({ activeSection = "dashboard", onSectionChange 
                   Search
                 </Button>
               )}
-            </div>
+            </div> */}
 
             {/* Notifications */}
-            <Button variant="outline" size="sm" className="relative">
+            {/* <Button variant="outline" size="sm" className="relative">
               <Bell className="h-4 w-4" />
               <Badge className="absolute -top-2 -right-2 h-5 w-5 p-0 bg-water-critical text-white text-xs flex items-center justify-center animate-pulse">
                 3
               </Badge>
-            </Button>
+            </Button> */}
 
             {/* Auth */}
             {isAuthenticated ? (

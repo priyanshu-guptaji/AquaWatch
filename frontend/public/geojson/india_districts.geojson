@@ -1,0 +1,90 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME_1": "Delhi",
+        "NAME_2": "Central Delhi"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [77.2, 28.6],
+          [77.3, 28.6],
+          [77.3, 28.7],
+          [77.2, 28.7],
+          [77.2, 28.6]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME_1": "Maharashtra",
+        "NAME_2": "Mumbai"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [72.8, 19.0],
+          [72.9, 19.0],
+          [72.9, 19.1],
+          [72.8, 19.1],
+          [72.8, 19.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME_1": "Karnataka",
+        "NAME_2": "Bangalore"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [77.5, 12.9],
+          [77.6, 12.9],
+          [77.6, 13.0],
+          [77.5, 13.0],
+          [77.5, 12.9]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME_1": "Tamil Nadu",
+        "NAME_2": "Chennai"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [80.2, 13.0],
+          [80.3, 13.0],
+          [80.3, 13.1],
+          [80.2, 13.1],
+          [80.2, 13.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME_1": "West Bengal",
+        "NAME_2": "Kolkata"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [88.3, 22.5],
+          [88.4, 22.5],
+          [88.4, 22.6],
+          [88.3, 22.6],
+          [88.3, 22.5]
+        ]]
+      }
+    }
+  ]
+}

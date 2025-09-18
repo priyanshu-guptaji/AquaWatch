@@ -26,7 +26,7 @@ interface RechargeEstimatorProps {
   className?: string;
 }
 
-export const RechargeEstimator = ({ region = "Selected Region", className }: RechargeEstimatorProps) => {
+export const RechargeEstimator = ({ region = "Rayagada - Odisha", className }: RechargeEstimatorProps) => {
   const currentMonth = new Date().getMonth();
   const currentData = monthlyRecharge[currentMonth];
   const annualRecharge = monthlyRecharge.reduce((sum, month) => sum + month.recharge, 0);

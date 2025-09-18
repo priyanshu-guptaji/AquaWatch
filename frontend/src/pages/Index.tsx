@@ -6,11 +6,16 @@ import { AlertSystem } from "@/components/AlertSystem";
 import { RechargeEstimator } from "@/components/RechargeEstimator";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Droplets, TrendingUp, TrendingDown, MapPin, Users, Building, Wheat } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Droplets, TrendingUp, TrendingDown, MapPin, Users, Building, Wheat, Upload, BarChart3, BookOpen } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { HowItWorks } from "@/components/HowItWorks";
+import FeatureSummary from "@/components/FeatureSummary";
+import EnhancedDashboard from "./EnhancedDashboard";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("dashboard");
+  const navigate = useNavigate();
 
   // Mock national statistics
   const nationalStats = {
@@ -30,8 +35,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      
-      <main className="container mx-auto px-4 py-6">
+      {activeSection === "dashboard" ? (
+        <EnhancedDashboard onBack={() => setActiveSection("home")} />
+      ) : (
+        <main className="container mx-auto px-4 py-6">
         {/* Hero Section */}
         <div className="relative mb-8 p-8 rounded-2xl bg-gradient-hero text-white overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-teal-900/50" />
@@ -44,13 +51,53 @@ const Index = () => {
                 <p className="text-xl opacity-90 mb-4">
                   Real-time insights from {nationalStats.activeStations.toLocaleString()} DWLR stations across the nation
                 </p>
-                <div className="flex items-center gap-4">
-                  <Badge className="bg-white/20 text-white border-white/30">
-                    Last Updated: {nationalStats.lastUpdated}
-                  </Badge>
-                  <Badge className="bg-white/20 text-white border-white/30">
-                    National GHI: {nationalStats.averageGHI}
-                  </Badge>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <div className="flex items-center gap-4">
+                    <Badge className="bg-white/20 text-white border-white/30">
+                      Last Updated: {nationalStats.lastUpdated}
+                    </Badge>
+                    <Badge className="bg-white/20 text-white border-white/30">
+                      National GHI: {nationalStats.averageGHI}
+                    </Badge>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Button 
+                      onClick={() => navigate('/dashboard')} 
+                      variant="secondary" 
+                      size="sm"
+                      className="flex items-center gap-2"
+                    >
+                      <Upload className="h-4 w-4" />
+                      Upload Data
+                    </Button>
+                    <Button 
+                      onClick={() => navigate('/predict')} 
+                      variant="secondary" 
+                      size="sm"
+                      className="flex items-center gap-2"
+                    >
+                      <BarChart3 className="h-4 w-4" />
+                      Predictions
+                    </Button>
+                    <Button 
+                      onClick={() => navigate('/about')} 
+                      variant="secondary" 
+                      size="sm"
+                      className="flex items-center gap-2"
+                    >
+                      <BookOpen className="h-4 w-4" />
+                      About
+                    </Button>
+                    <Button 
+                      onClick={() => setActiveSection('dashboard')} 
+                      variant="secondary" 
+                      size="sm"
+                      className="flex items-center gap-2"
+                    >
+                      <MapPin className="h-4 w-4" />
+                      District Map
+                    </Button>
+                  </div>
                 </div>
               </div>
               <div className="hidden lg:block">
@@ -115,6 +162,11 @@ const Index = () => {
           <HowItWorks />
         </div>
 
+        {/* Feature Summary */}
+        <div className="mb-8">
+          <FeatureSummary />
+        </div>
+
         {/* Knowledge Hub Preview */}
         <Card className="shadow-card">
           <CardHeader>
@@ -149,7 +201,8 @@ const Index = () => {
             </div>
           </CardContent>
         </Card>
-      </main>
+        </main>
+      )}
     </div>
   );
 };
